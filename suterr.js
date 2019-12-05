@@ -69,17 +69,13 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-
+/*
 app.get('/count',function(req,res){
   var context = {};
   context.count = req.session.count || 0;
   req.session.count = context.count + 1;
   res.render('count', context);
 });
-
-
-
-
 
 
 app.get('/citypage', function(req,res){
@@ -121,7 +117,7 @@ app.post('/ticket_print', function(req,res){
   context.dataList = qParams;
   res.render('ticket_print', context);
 });
-
+*/
 app.use(function(req,res){
   res.status(404);
   res.render('404');
