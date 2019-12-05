@@ -40,7 +40,7 @@ app.get('/',function(req,res,next){
 });
 app.get('/insert',function(req,res,next){
   var context = {};
-  pool.query("INSERT INTO workouts (`name`,`reps`) VALUES (?, ?)", [req.query.name, req.query.reps], function(err, result){
+  pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `unit`, `date`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.unit, req.query.date], function(err, result){
     if(err){
       next(err);
       return;
