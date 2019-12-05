@@ -1,0 +1,136 @@
+.navbar a{
+	text-align: center;
+	color: white;
+	background-color: NavajoWhite;
+	padding: 15px;
+	float: left;
+	font-size: 20px;
+	text-shadow: 1px 1px 5px Peru;
+	text-decoration: none;
+	width: 22%;
+}
+.navbar a:hover{
+	background-color: Cornsilk;
+}
+
+.navbar{
+	overflow: hidden;
+	font-family: Arial;
+}
+
+.mainTitle{
+	margin: auto;
+	color: SaddleBrown;
+	text-shadow: 1px 1px 2px black;
+	text-align: center;
+}
+
+.subTitle{
+	margin: auto;
+	text-align: center;
+}
+
+.ticketForm{
+	width: 35%;
+	margin-left:auto;
+	margin-right:auto;
+	border-radius: 5px;
+	font-size: 20px;
+}
+.tickets{
+	margin-left: auto;
+	margin-right: auto;
+	width: 20%;
+	background-color: white;
+}
+.tickets ul{
+	border: 2px;
+	list-style:none;
+}
+.ticketInput{
+	padding:10px;
+}
+#barcode{
+	padding: 10px 30px;
+	height: 75px;
+	width: 150px;
+}
+
+.cityPictures{
+	list-style:none outside none;
+	overflow: scroll;
+	float: right;
+	width: 50%;
+	height: 800px;
+	padding: 0px 10px;
+}
+.cityPictures ul{
+	list-style: none;
+}
+.cityText{
+	width: 40%;
+	height: 800px;
+	float: left;
+	display: flex;
+	align-items: center;
+}
+.cityText ul{
+	margin: 15%;
+
+}
+.cityText li{
+	padding: 8px;
+	font-size: 25px;
+}
+
+#slideshow{
+	width:700px;
+	height:700px;
+	position:center;
+	margin: auto;
+}
+
+#slideshow ul{
+	width:700px;
+	height:700px;
+	list-style:none outside none;
+	position:relative;
+	overflow:hidden;
+}
+
+#slideshow li:first-child{
+	display:list-item;
+	position:absolute;
+}
+#slideshow li{
+	position:absolute:
+	display:none;
+}
+#slideshow .prevButton{
+	height:175px;
+	width:175px;
+	position:absolute;
+	background: url('/images/prevButton.png') no-repeat;
+	top:50%;
+	margin-top:-36px;
+	cursor:pointer;
+	z-index:2000;
+	left:0
+}
+
+#slideshow .nextButton{
+	height:175px;
+	width:175px;
+	position:absolute;
+	background:url('/images/nextButton.png') no-repeat;
+	top:50%;
+	margin-top:-36px;
+	cursor:pointer;
+	z-index:2000;
+	right:0
+}
+
+body{
+	background:url('/images/paper.jpg') repeat;
+	font-family: Arial;
+}
