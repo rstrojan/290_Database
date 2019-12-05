@@ -1,9 +1,25 @@
 var express = require('express');
 var session = require('express-session');
+var mysql = require('mysql');
+
+var pool = mysql.createPool({
+  host  : 'localhost',
+  user  : 'student',
+  password: 'default',
+  database: 'student'
+});
 
 var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var bodyParser = require('body-parser');
+
+var mysql = require('mysql');
+var pool = mysql.createPool({
+  host  : 'localhost',
+  user  : 'student',
+  password: 'default',
+  database: 'student'
+});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
@@ -17,12 +33,47 @@ app.get('/',function(req,res){
 	res.render('home');
 });
 
+app.get('/insert',function(req,res,next){
+  var context = {};
+  mysql.pool.query("INSERT INTO todo (`name`) VALUES (?)", [req.query.c], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+    context.results = "Inserted id " + result.insertId;
+    res.render('home',context);
+  });
+});
+
+app.get('/reset-table',function(req,res,next){
+  var context = {};
+  pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
+    var createString = "CREATE TABLE workouts("+
+    "id INT PRIMARY KEY AUTO_INCREMENT,"+
+    "name VARCHAR(255) NOT NULL,"+
+    "reps INT,"+
+    "weight INT,"+
+    "date DATE,"+
+    "lbs BOOLEAN)";
+    [your connection pool].query(createString, function(err){
+      context.results = "Table reset";
+      res.render('home',context);
+    })
+  });
+});
+
+
 app.get('/count',function(req,res){
   var context = {};
   context.count = req.session.count || 0;
   req.session.count = context.count + 1;
   res.render('count', context);
 });
+
+
+
+
+
 
 app.get('/citypage', function(req,res){
 	res.render('citypage');
