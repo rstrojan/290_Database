@@ -28,6 +28,11 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
+	var qParams = [];
+	for (var p in rows){
+		qParams.push({'name':p,'value':rows[p]})
+	}
+	context.dataList = qParams;
     context.results = JSON.stringify(rows);
     res.render('home', context);
   });
