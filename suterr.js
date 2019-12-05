@@ -28,11 +28,12 @@ app.get('/',function(req,res,next){
       next(err);
       return;
     }
+	/*
 	var qParams = [];
 	for (var p in rows){
 		qParams.push({p})
-	}
-	context.dataList = qParams;
+	}*/
+	context.dataList = rows;
     context.results = JSON.stringify(rows);
     res.render('home', context);
   });
