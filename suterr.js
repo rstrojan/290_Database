@@ -39,14 +39,36 @@ app.get('/',function(req,res,next){
   });
 });
 app.get('/insert',function(req,res,next){
-  var context = {};
   pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `lbs`, `date`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
     if(err){
       next(err);
       return;
     }
-    context.results = "Inserted id " + result.insertId;
-    res.render('home',context);
+  });
+  
+  var context = {};
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+	/*
+	var qParams = [];
+	for (var p in rows){
+		qParams.push({p})
+	}*/
+	context.dataList = rows;
+    context.results = JSON.stringify(rows);
+    res.render('home', context);
+  });
+});
+
+app.post('/delete',function(req,res,next){
+  pool.query("DELETE FROM workouts WHERE id = VALUES (?)", [req.query.id], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
   });
 });
 

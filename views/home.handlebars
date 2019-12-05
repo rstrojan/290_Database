@@ -10,6 +10,15 @@
 	<th>Date</th>
 	<th></th>
   </tr>
+  <form>
+  <tr>
+	<td><input type="text"
+	<td>
+	<td>
+	<td>
+	<td>
+  </tr>
+  </form>
   {{#each dataList}}
   <tr>
     <td>{{this.name}}
@@ -17,7 +26,7 @@
 	<td>{{this.weight}}
 	<td>{{this.lbs}}
 	<td>{{this.date}}
-	<td><input type="button" value="Remove Excercise" onclick="deleteRow('tracker',this)" />
+	<td><input type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})" />
   </tr>
   {{/each}}
 </table>

@@ -1,4 +1,4 @@
-function deleteRow(tableID,currentRow) {
+function deleteRow(tableID,currentRow,rowId) {
     try {
         var table = document.getElementById(tableID);
         var rowCount = table.rows.length;
@@ -15,10 +15,25 @@ function deleteRow(tableID,currentRow) {
                 table.deleteRow(i);
                 rowCount--;
                 i--;
-            }
+				var req = new XMLHttpRequest();
+				var payload = {id:rowId};
+				req.open('POST',"http://flip3.engr.oregonstate.edu:34692", true);
+				req.setRequestHeader('Content-Type','application/json');
+				req.addEventListener('load',function(){
+					if(req.status >= 200 && req.status < 400){
+						var response = JSON.parse(req.responseText);
+						//document.getElementById('postResult').textContent = response.data;
+						//document.getElementById('shortUrl').textContent = response.id;
+					  } else {
+						console.log("Error in network request: " + req.statusText);
+					 }});
+				req.send(JSON.stringify(payload));
+				event.preventDefault();
+			}
         }
     } catch (e) {
         alert(e);
     }
     //getValues();
 }
+
