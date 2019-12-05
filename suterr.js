@@ -1,7 +1,6 @@
 var express = require('express');
 var session = require('express-session');
 var mysql = require('mysql');
-
 var pool = mysql.createPool({
   host  : 'localhost',
   user  : 'student',
@@ -13,13 +12,6 @@ var app = express();
 var handlebars = require('express-handlebars').create({defaultLayout:'main'});
 var bodyParser = require('body-parser');
 
-var mysql = require('mysql');
-var pool = mysql.createPool({
-  host  : 'localhost',
-  user  : 'student',
-  password: 'default',
-  database: 'student'
-});
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
