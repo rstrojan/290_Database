@@ -1,8 +1,21 @@
 <h1>hello</h1>
 {{results}}
 
-<ul>
+<table style="width:100%">
+  <tr>
+    <th>Name</th>
+    <th>Reps</th>
+    <th>Weight</th>
+	<th>Unit</th>
+	<th>Date</th>
+  </tr>
   {{#each dataList}}
-    <li>{{this.name}}: {{this.reps}}
+  <tr>
+    <td>{{this.name}}
+	<td>{{this.reps}}
+	<td>{{this.weight}}
+	<td>{{this.unit}}
+	<td>{{this.date}}
+  </tr>
   {{/each}}
-</ul>
+</table>
