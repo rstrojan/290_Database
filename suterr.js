@@ -34,7 +34,7 @@ app.get('/',function(req,res,next){
 });
 app.get('/insert',function(req,res,next){
   var context = {};
-  pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.c], function(err, result){
+  pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.name], function(err, result){
     if(err){
       next(err);
       return;
