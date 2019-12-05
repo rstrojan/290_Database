@@ -27,6 +27,8 @@ function deleteRow(tableID,currentRow,rowId) {
 					  } else {
 						console.log("Error in network request: " + req.statusText);
 					 }});
+				console.log(payload);
+				console.log(JSON.payload);
 				req.send(JSON.payload);
 				event.preventDefault();
 			}
