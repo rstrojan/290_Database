@@ -31,7 +31,7 @@ app.set('port', 34692);
 
 app.get('/',function(req,res,next){
   var context = {};
-  mysql.pool.query('SELECT * FROM workouts', function(err, rows, fields){
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
     if(err){
       next(err);
       return;
@@ -42,7 +42,7 @@ app.get('/',function(req,res,next){
 });
 app.get('/insert',function(req,res,next){
   var context = {};
-  mysql.pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.c], function(err, result){
+  pool.query("INSERT INTO workouts (`name`) VALUES (?)", [req.query.c], function(err, result){
     if(err){
       next(err);
       return;
