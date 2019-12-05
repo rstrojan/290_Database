@@ -29,7 +29,7 @@ function deleteRow(tableID,currentRow,rowId) {
 					 }});
 				console.log(payload);
 				console.log(JSON.payload);
-				req.send(JSON.payload);
+				req.send(payload);
 				event.preventDefault();
 			}
         }
