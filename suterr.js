@@ -2,10 +2,10 @@ var express = require('express');
 var session = require('express-session');
 var mysql = require('mysql');
 var pool = mysql.createPool({
-  host  : 'localhost',
-  user  : 'student',
-  password: 'default',
-  database: 'student'
+  host  : 'classmysql.engr.oregonstate.edu',
+  user  : 'cs290_suterr',
+  password: '1893',
+  database: 'cs290_suterr'
 });
 
 var app = express();
