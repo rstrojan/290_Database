@@ -30,7 +30,7 @@ app.get('/',function(req,res,next){
     }
 	var qParams = [];
 	for (var p in rows){
-		qParams.push({'name':p,'value':rows[p]})
+		qParams.push({p})
 	}
 	context.dataList = qParams;
     context.results = JSON.stringify(rows);
