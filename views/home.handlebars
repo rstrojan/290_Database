@@ -1,13 +1,14 @@
 <h1>hello</h1>
 {{results}}
 
-<table style="width:100%">
+<table style="width:100%" id="tracker">
   <tr>
     <th>Name</th>
     <th>Reps</th>
     <th>Weight</th>
 	<th>lbs</th>
 	<th>Date</th>
+	<th></th>
   </tr>
   {{#each dataList}}
   <tr>
@@ -16,6 +17,9 @@
 	<td>{{this.weight}}
 	<td>{{this.lbs}}
 	<td>{{this.date}}
+	<td><input type="button" value="Remove Excercise" onclick="deleteRow('tracker',this)" />
   </tr>
   {{/each}}
 </table>
+
+<script src="/js/tableEdit.js"></script>
