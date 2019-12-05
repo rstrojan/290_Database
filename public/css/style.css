@@ -1,3 +1,16 @@
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+body{
+	background:url('/images/paper.jpg') repeat;
+	font-family: Arial;
+}
+
+
+
+/*
 .navbar a{
 	text-align: center;
 	color: white;
@@ -129,8 +142,4 @@
 	z-index:2000;
 	right:0
 }
-
-body{
-	background:url('/images/paper.jpg') repeat;
-	font-family: Arial;
-}
+*/
