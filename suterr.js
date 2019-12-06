@@ -71,7 +71,7 @@ app.get('/insert',function(req,res,next){
 	console.log("1");
 	var context = {};
 	console.log("2");
-  pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `lbs`, `date`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, row, result){
+  pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `lbs`, `date`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
 	  console.log("3");
 	if(err){
 	  console.log("4");
@@ -79,9 +79,15 @@ app.get('/insert',function(req,res,next){
       return;
     }
 	console.log("5");
-	
-	context.results = JSON.stringify(row);
-	res.send(context.row);
+	pool.query("SELECT * FROM workouts WHERE id=?", [result.insertId], function(err, result){
+		if(err){
+			next(err);
+			return;
+		}
+		res.send(result[0]);
+	});
+	//context.results = JSON.stringify(row);
+	//res.send(context.row);
 	//res.send('what');
 	//res.send(result.insertId);
   });
