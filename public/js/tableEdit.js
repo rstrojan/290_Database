@@ -55,6 +55,9 @@ function addRow(tableID) {
 		var table = document.getElementById(tableID);
 		var newRow = document.createElement("TR");
 		table.insertBefore(newRow, table.childNodes[2]);
+		var textnode = document.createTextNode("water");
+		newRow.appendChild(textnode);
+		
 		
 		
 		console.log(response);
