@@ -71,6 +71,14 @@ function editRow(tableID,rowId) {
     }//getValues();
 }
 
+function backHome() {
+	try{
+	window.location.href = "http://flip3.engr.oregonstate.edu:34692/;
+    } catch (e) {
+        alert(e);
+    }//getValues();
+}
+
 function updateRow(tableID,rowId) {
     try {
 		var req = new XMLHttpRequest();
