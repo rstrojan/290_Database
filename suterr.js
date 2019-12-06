@@ -84,7 +84,6 @@ app.get('/insert',function(req,res,next){
     res.render('home', context);
   });
   });
-  res.end();
   
 });
 
