@@ -81,16 +81,12 @@ app.get('/insert',function(req,res,next){
 		}
 		res.send(result[0]);
 	});
-	//context.results = JSON.stringify(row);
-	//res.send(context.row);
-	//res.send('what');
-	//res.send(result.insertId);
   });
   
 });
 
 app.post('/delete',function(req,res,next){
-	console.log(req.body.id);
+	//console.log(req.body.id);
   pool.query("DELETE FROM `workouts` WHERE `id` =?", [req.body.id], function(err, result){
     if(err){
       next(err);
@@ -102,7 +98,7 @@ app.post('/delete',function(req,res,next){
 
 app.get('/reset-table',function(req,res,next){
   var context = {};
-  pool.query("DROP TABLE IF EXISTS workouts", function(err){ //replace your connection pool with the your variable containing the connection pool
+  pool.query("DROP TABLE IF EXISTS workouts", function(err){ 
     var createString = "CREATE TABLE workouts("+
     "id INT PRIMARY KEY AUTO_INCREMENT,"+
     "name VARCHAR(255) NOT NULL,"+
@@ -117,55 +113,6 @@ app.get('/reset-table',function(req,res,next){
   });
 });
 
-/*
-app.get('/count',function(req,res){
-  var context = {};
-  context.count = req.session.count || 0;
-  req.session.count = context.count + 1;
-  res.render('count', context);
-});
-
-
-app.get('/citypage', function(req,res){
-	res.render('citypage');
-});
-
-app.get('/tickets', function(req,res){
-	res.render('tickets');
-});
-
-app.get('/Find_out_more', function(req,res){
-	res.render('Find_out_more');
-});
-
-app.get('/ticket_print',function(req,res){
-  var qParams = [];
-  for (var p in req.query){
-    qParams.push({'name':p,'value':req.query[p]})
-  }
-  var context = {};
-  var test = "Departure City"
-  context.watchthis = req.query.Destination;
-  context.callType = 'GETa';
-  console.log(req.query.Destination);
-  context.dataList = qParams;
-  res.render('ticket_print', context);
-});
-
-
-app.post('/ticket_print', function(req,res){
-  var qParams = [];
-  for (var p in req.body){
-    qParams.push({'name':p,'value':req.body[p]})
-  }
-  console.log(qParams);
-  console.log(req.body);
-  var context = {};
-  context.callType = 'POST';
-  context.dataList = qParams;
-  res.render('ticket_print', context);
-});
-*/
 app.use(function(req,res){
   res.status(404);
   res.render('404');

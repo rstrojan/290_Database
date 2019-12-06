@@ -124,3 +124,11 @@ function backHome() {
         alert(e);
     }//getValues();
 }
+
+function resetTable() {
+	try{
+	window.location.href = "http://flip3.engr.oregonstate.edu:34692/reset-table";
+    } catch (e) {
+        alert(e);
+    }//getValues();
+}
