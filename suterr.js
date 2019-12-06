@@ -81,7 +81,8 @@ app.get('/insert',function(req,res,next){
 	console.log("5");
 	
 	console.log(JSON.stringify(result.insertId));
-	res.send(result.insertId);
+	res.send('what');
+	//res.send(result.insertId);
   });
   
 });
