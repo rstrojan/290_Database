@@ -12,11 +12,16 @@
   </tr>
   <form>
   <tr>
-	<td><input type="text"
-	<td>
-	<td>
-	<td>
-	<td>
+	<td><input type="text" name="Name" id="add_name" size="30" maxlength="30">
+	<td><input type="number" name="Reps" id="add_reps" value="1" min="1">
+	<td><input type="number" name="Weight" id="add_weight" value="1" min="1">
+	<td><input list="lbs" name="lbs" id="lbs">
+				<datalist id="lbs">
+					<option value="true">
+					<option value="false">
+				</datalist>
+	<td><input type="date" name="Entry Date" id="add_date" value="2019-11-24" size="20">
+	<td><input type="button" value ="Add Entry" onclick="addRow('tracker',this, {{this.id}})>
   </tr>
   </form>
   {{#each dataList}}

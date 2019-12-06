@@ -39,3 +39,25 @@ function deleteRow(tableID,currentRow,rowId) {
     //getValues();
 }
 
+function addRow(tableID) {
+    try {
+        var table = document.getElementById(tableID);
+		var row = table.insertRow(0);
+		row.insertCell(0).innerHTML = document.getElementById(add_name);
+		row.insertCell(0).innerHTML = document.getElementById(add_reps);
+		row.insertCell(0).innerHTML = document.getElementById(add_weight);
+		row.insertCell(0).innerHTML = document.getElementById(add_lbs);
+		row.insertCell(0).innerHTML = document.getElementById(add_date);
+		var req = new XMLHttpRequest();
+		 req.open("GET", "http://flip3.eng.oregonstate.edu:34692/insert?"+
+		 "name=" + document.getElementById(add_name).value +
+		 "&reps=" + document.getElementById(add_reps).value +
+		 "&weight=" + document.getElementById(add_weight).value +
+		 "&lbs=" + document.getElementById(add_lbs) +
+		 "&date=" + document.getElementById(add_date), false);
+		req.send(null);
+    } catch (e) {
+        alert(e);
+    }
+    //getValues();
+}
