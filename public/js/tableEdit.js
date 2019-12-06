@@ -44,7 +44,7 @@ function addRow(tableID) {
 		 "name=" + document.getElementById("add_name").value +
 		 "&reps=" + document.getElementById("add_reps").value +
 		 "&weight=" + document.getElementById("add_weight").value +
-		 "&lbs=" + document.getElementById("add_lbs").value +
+		 "&lbs=" + (document.getElementById("add_lbs").value || 0) +
 		 "&date=" + document.getElementById("add_date").value, false);
 		req.send();
 		var response = JSON.parse(req.responseText);
