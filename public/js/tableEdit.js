@@ -44,7 +44,7 @@ function addRow(tableID) {
         var table = document.getElementById(tableID);
 		console.log(document.getElementById(add_name).value)
 		var row = table.insertRow(2);
-		row.insertCell(0).innerHTML = document.getElementById(add_name).value;
+		row.insertCell(0).innerHTML = document.getElementById("add_name").value;
 		row.insertCell(0).innerHTML = document.getElementById(add_reps).value;
 		row.insertCell(0).innerHTML = document.getElementById(add_weight).value;
 		row.insertCell(0).innerHTML = document.getElementById(add_lbs).value;
