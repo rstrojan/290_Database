@@ -50,7 +50,8 @@ function addRow(tableID) {
 		 "&date=" + document.getElementById("add_date").value, false);
 		req.send();
 		console.log(req.responseText);
-		
+		var response = JSON.parse(req.responseText);
+		console.log(resposne);
     } catch (e) {
         alert(e);
     }
