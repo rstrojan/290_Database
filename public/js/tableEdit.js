@@ -51,6 +51,12 @@ function addRow(tableID) {
 		req.send();
 		console.log(req.responseText);
 		var response = JSON.parse(req.responseText);
+		
+		var table = document.getElementById(tableID);
+		var newRow = document.createElement("TR");
+		table.insertBefore(newRow, table.childNodes[2]);
+		
+		
 		console.log(response);
     } catch (e) {
         alert(e);
