@@ -11,7 +11,7 @@
 	<th></th>
   </tr>
   <form>
-  {{#each dataList}}
+  
   <tr>
 	<td><input type="text" name="Name" id="add_name" value="New Entry" size="30" maxlength="30">
 	<td><input type="number" name="Reps" id="add_reps" value="1" min="1">
@@ -26,7 +26,7 @@
 	<td>
   </tr>
   </form>
-  
+  {{#each dataList}}
   <tr>
     <td>{{this.name}}
 	<td>{{this.reps}}
