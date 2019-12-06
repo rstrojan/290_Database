@@ -70,3 +70,20 @@ function editRow(tableID,rowId) {
         alert(e);
     }//getValues();
 }
+
+function updateRow(tableID,rowId) {
+    try {
+		var req = new XMLHttpRequest();
+		 req.open("GET", "http://flip3.engr.oregonstate.edu:34692/save?"+
+		 "id=" + rowId +
+		 "&name=" + document.getElementById("add_name").value +
+		 "&reps=" + document.getElementById("add_reps").value +
+		 "&weight=" + document.getElementById("add_weight").value +
+		 "&lbs=" + document.getElementById("add_lbs").value +
+		 "&date=" + document.getElementById("add_date").value, true);
+		req.send();
+    } catch (e) {
+        alert(e);
+    }
+    //getValues();
+}

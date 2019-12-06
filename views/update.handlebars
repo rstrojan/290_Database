@@ -22,20 +22,10 @@
 					<option value="false">
 				</datalist>
 	<td><input type="date" name="Entry Date" id="add_date" value="{{this.date}}" size="20">
-	<td><input type="button" value ="Add Entry" onclick="addRow('tracker')"/>
+	<td><input type="button" value ="Update Entry" onclick="updateRow('tracker',{{this.id}})"/>
 	<td>
   </tr>
   </form>
-  
-  <tr>
-    <td>{{this.name}}
-	<td>{{this.reps}}
-	<td>{{this.weight}}
-	<td>{{this.lbs}}
-	<td>{{this.date}}
-	<td><input type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})" />
-	<td><input type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})" />
-  </tr>
   {{/each}}
 </table>
 

@@ -46,14 +46,36 @@ app.get('/update',function(req,res,next){
       next(err);
       return;
     }
-	/*
-	var qParams = [];
-	for (var p in rows){
-		qParams.push({p})
-	}*/
 	context.dataList = rows;
     context.results = JSON.stringify(rows);
     res.render('update', context);
+  });
+});
+
+app.get('/save',function(req,res,next){
+  var context = {};
+    pool.query('SELECT * FROM workouts WHERE id=?', [req.query.id], function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+	var curVals= result[0];
+	});	
+  pool.query("UPDATE workouts SET (`name`,`reps`, `weight`, `lbs`, `date`) VALUES (?,?,?,?,?)", [req.query.name || curVals.name, req.query.reps || curVals.reps, req.query.weight || curVals.weight, req.query.lbs || curVals.lbs, req.query.date || curVals.date], function(err, result){
+    if(err){
+      next(err);
+      return;
+    }
+  });
+  
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+	context.dataList = rows;
+    context.results = JSON.stringify(rows);
+    res.render('home', context);
   });
 });
 
