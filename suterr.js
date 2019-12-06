@@ -45,6 +45,7 @@ app.get('/insert',function(req,res,next){
       return;
     }
   });
+  res.end();
   
 });
 
@@ -56,6 +57,7 @@ app.post('/delete',function(req,res,next){
       return;
     }
   });
+  res.end();
 });
 
 app.get('/reset-table',function(req,res,next){
