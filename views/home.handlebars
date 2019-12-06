@@ -10,7 +10,7 @@
 	<th>Date</th>
 	<th></th>
   </tr>
-  <form>
+  <form action='/'>
   
   <tr>
 	<td><input type="text" name="Name" id="add_name" value="New Entry" size="30" maxlength="30">
@@ -23,7 +23,7 @@
 				</datalist>
 	<td><input type="date" name="Entry Date" id="add_date" value="2019-11-24" size="20">
 	<td><input type="button" value ="Add Entry" onclick="addRow('tracker')"/>
-	<td>
+	<td><input type="submit" value="Submit" id="submitEntry">
   </tr>
   </form>
   {{#each dataList}}
@@ -35,6 +35,7 @@
 	<td>{{this.date}}
 	<td><input type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})" />
 	<td><input type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})" />
+	<td>
   </tr>
   {{/each}}
 </table>
