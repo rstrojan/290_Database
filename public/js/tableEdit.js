@@ -67,7 +67,9 @@ function addRow(tableID) {
 		var lbsCell = document.createElement("TD");
 		newRow.appendChild(lbsCell);
 		lbsCell.appendChild(document.createTextNode(response.lbs));
-		
+		var dateCell = document.createElement("TD");
+		newRow.appendChild(dateCell);
+		dateCell.appendChild(document.createTextNode(response.date));
 		
 		
 		console.log(response);
