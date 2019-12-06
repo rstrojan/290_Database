@@ -64,8 +64,8 @@ app.get('/insert',function(req,res,next){
 });
 
 app.post('/delete',function(req,res,next){
-	console.log(req.query.id);
-  pool.query("DELETE FROM workouts WHERE id = VALUES (?)", [req.query.id], function(err, result){
+	console.log(req.body.id);
+  pool.query("DELETE FROM workouts WHERE id = VALUES (?)", [req.body.id], function(err, result){
     if(err){
       next(err);
       return;
