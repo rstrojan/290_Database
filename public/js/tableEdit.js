@@ -51,7 +51,7 @@ function addRow(tableID) {
 		req.send();
 		console.log(req.responseText);
 		var response = JSON.parse(req.responseText);
-		console.log(resposne);
+		console.log(response);
     } catch (e) {
         alert(e);
     }
