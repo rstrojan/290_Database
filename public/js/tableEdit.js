@@ -47,15 +47,9 @@ function addRow(tableID) {
 		 "&reps=" + document.getElementById("add_reps").value +
 		 "&weight=" + document.getElementById("add_weight").value +
 		 "&lbs=" + document.getElementById("add_lbs").value +
-		 "&date=" + document.getElementById("add_date").value, true);
-		req.addEventListener('load',function(){
-					if(req.status >= 200 && req.status < 400){
-						var response = JSON.parse(req.responseText);
-						//document.getElementById('postResult').textContent = response.data;
-						//document.getElementById('shortUrl').textContent = response.id;
-					  } else {
-						console.log("Error in network request: " + req.statusText);
-					 }});
+		 "&date=" + document.getElementById("add_date").value, false);
+		req.send(null);
+		console.log(JSON.parse(req.responseText));
     } catch (e) {
         alert(e);
     }
