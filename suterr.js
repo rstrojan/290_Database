@@ -74,15 +74,8 @@ app.get('/insert',function(req,res,next){
       next(err);
       return;
     }
-	  pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-	context.dataList = rows;
-    context.results = JSON.stringify(rows);
-    res.render('home', context);
-  });
+	console.log(result);
+	res.send(result);
   });
   
 });
