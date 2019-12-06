@@ -55,8 +55,8 @@ function addRow(tableID) {
 		 "&reps=" + document.getElementById("add_reps").value +
 		 "&weight=" + document.getElementById("add_weight").value +
 		 "&lbs=" + document.getElementById("add_lbs").value +
-		 "&date=" + document.getElementById("add_date").value, false);
-		req.send(null);
+		 "&date=" + document.getElementById("add_date").value, true);
+		req.send();
     } catch (e) {
         alert(e);
     }
