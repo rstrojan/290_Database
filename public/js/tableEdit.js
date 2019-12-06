@@ -57,6 +57,7 @@ function addRow(tableID) {
 		table.insertBefore(newRow, table.childNodes[2]);
 		var nameCell = document.createElement("TD");
 		newRow.appendChild(nameCell);
+		nameCell.appendChild(document.createTextNode(response.name));
 		var repsCell = document.createElement("TD");
 		newRow.appendChild(repsCell);
 		
