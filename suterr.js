@@ -74,13 +74,12 @@ app.get('/save',function(req,res,next){
 			console.log("?");
 			context.dataList = rows;
 			context.results = JSON.stringify(rows);
-			//res.render('home', context);
+			res.render('home', context);
 		  });
-		  res.render('home', context);
 	  });
    });
    console.log("?");
-
+	window.location.href = "http://flip3.engr.oregonstate.edu:34692/"
 });
 
 app.get('/insert',function(req,res,next){
