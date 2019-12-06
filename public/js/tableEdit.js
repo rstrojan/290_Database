@@ -27,8 +27,6 @@ function deleteRow(tableID,currentRow,rowId) {
 					  } else {
 						console.log("Error in network request: " + req.statusText);
 					 }});
-				console.log(payload);
-				console.log(JSON.stringify(payload));
 				req.send(JSON.stringify(payload));
 				event.preventDefault();
 			}
@@ -49,7 +47,6 @@ function addRow(tableID) {
 		 "&lbs=" + document.getElementById("add_lbs").value +
 		 "&date=" + document.getElementById("add_date").value, false);
 		req.send();
-		console.log(req.responseText);
 		var response = JSON.parse(req.responseText);
 		
 		var table = document.getElementById(tableID);
@@ -89,7 +86,6 @@ function addRow(tableID) {
 		editBut.setAttribute("value","Edit Entry");
 		editBut.setAttribute("onclick","editRow('tracker',"+response.id+")");
 		
-		console.log(response);
     } catch (e) {
         alert(e);
     }
