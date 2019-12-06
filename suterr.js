@@ -66,7 +66,9 @@ app.get('/save',function(req,res,next){
 		  next(err);
 		  return;
 		}
-		    res.redirect("http://flip3.engr.oregonstate.edu:34692");
+		context.results= "nothing";
+		res.render('home',context);
+		 res.redirect("http://flip3.engr.oregonstate.edu:34692");
 	  });
   });
 });
