@@ -49,6 +49,7 @@ function addRow(tableID) {
 		row.insertCell(2).innerHTML = document.getElementById("add_weight").value;
 		row.insertCell(3).innerHTML = document.getElementById("add_lbs").value;
 		row.insertCell(4).innerHTML = document.getElementById("add_date").value;
+		var but1 = row.insertCell(5);
 		var req = new XMLHttpRequest();
 		 req.open("GET", "http://flip3.engr.oregonstate.edu:34692/insert?"+
 		 "name=" + document.getElementById("add_name").value +
