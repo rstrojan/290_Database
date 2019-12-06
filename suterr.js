@@ -64,6 +64,7 @@ app.get('/save',function(req,res,next){
 	  pool.query("UPDATE workouts SET name=?, reps=?, weight=?, lbs=?, date=? WHERE id=?", [req.query.name || curVals.name, req.query.reps || curVals.reps, req.query.weight || curVals.weight, req.query.lbs || curVals.lbs, req.query.date || curVals.date, req.query.id], function(err, result){
 		if(err){
 		  next(err);
+		  (console.log("err"));
 		  return;
 		}
 		 res.redirect("http://flip3.engr.oregonstate.edu:34692");
