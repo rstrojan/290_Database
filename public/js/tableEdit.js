@@ -48,8 +48,14 @@ function addRow(tableID) {
 		 "&weight=" + document.getElementById("add_weight").value +
 		 "&lbs=" + document.getElementById("add_lbs").value +
 		 "&date=" + document.getElementById("add_date").value, true);
-		req.status(200).send();
-		var response = JSON.parse(req.responseText);
+		req.addEventListener('load',function(){
+					if(req.status >= 200 && req.status < 400){
+						var response = JSON.parse(req.responseText);
+						//document.getElementById('postResult').textContent = response.data;
+						//document.getElementById('shortUrl').textContent = response.id;
+					  } else {
+						console.log("Error in network request: " + req.statusText);
+					 }});
     } catch (e) {
         alert(e);
     }
