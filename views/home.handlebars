@@ -38,6 +38,17 @@
 	<td>
   </tr>
   {{/each}}
+    <tr id="template" visibility="hidden">
+    <td>{{this.name}}
+	<td>{{this.reps}}
+	<td>{{this.weight}}
+	<td>{{this.lbs}}
+	<td>{{this.date}}
+	<td><input type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})" />
+	<td><input type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})" />
+	<input type="hidden" value="this.id}">
+	<td>
+  </tr>
 </table>
 
 <script src="/js/tableEdit.js"></script>
