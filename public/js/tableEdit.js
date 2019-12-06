@@ -70,6 +70,7 @@ function addRow(tableID) {
 		var dateCell = document.createElement("TD");
 		newRow.appendChild(dateCell);
 		dateCell.appendChild(document.createTextNode(response.date));
+		//Add the buttons
 		var remCell = document.createElement("TD");
 		newRow.appendChild(remCell);
 		var remBut = document.createElement("INPUT");
@@ -78,6 +79,9 @@ function addRow(tableID) {
 		remBut.setAttribute("type","button");
 		remBut.setAttribute("value","Remove Entry");
 		remBut.setAttribute("onclick","deleteRow('tracker',this,"+response.id+")");
+		
+		var editCell = document.createElement("TD");
+		newRow.appendChild(editCell);
 		var editBut = document.createElement("INPUT");
 		editCell.appendChild(editBut);
 		//type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})"
