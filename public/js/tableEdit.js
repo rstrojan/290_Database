@@ -64,7 +64,9 @@ function addRow(tableID) {
 }
 
 function editRow(tableID,rowId) {
+	try{
 	window.location.href("http://flip3.engr.oregonstate.edu:34692/update?"+rowId);
-    }
-    //getValues();
+    } catch (e) {
+        alert(e);
+    }//getValues();
 }
