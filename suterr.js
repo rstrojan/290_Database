@@ -80,6 +80,7 @@ app.get('/save',function(req,res,next){
 				context.dataList = rows;
 				console.log(rows);
 				context.results = JSON.stringify(rows);
+				res.render('home', context);
 				
 			  });
 		res.render('home', context);
