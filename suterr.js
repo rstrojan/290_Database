@@ -117,7 +117,7 @@ app.get('/reset-table',function(req,res,next){
     "lbs BOOLEAN)";
     pool.query(createString, function(err){
       context.results = "Table reset";
-      res.render('home',context);
+      res.redirect('home');
     })
   });
 });
