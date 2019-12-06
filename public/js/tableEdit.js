@@ -45,10 +45,10 @@ function addRow(tableID) {
 		console.log(document.getElementById("add_name").value)
 		var row = table.insertRow(2);
 		row.insertCell(0).innerHTML = document.getElementById("add_name").value;
-		row.insertCell(0).innerHTML = document.getElementById(add_reps).value;
-		row.insertCell(0).innerHTML = document.getElementById(add_weight).value;
-		row.insertCell(0).innerHTML = document.getElementById(add_lbs).value;
-		row.insertCell(0).innerHTML = document.getElementById(add_date).value;
+		row.insertCell(0).innerHTML = document.getElementById("add_reps").value;
+		row.insertCell(0).innerHTML = document.getElementById("add_weight").value;
+		row.insertCell(0).innerHTML = document.getElementById("add_lbs").value;
+		row.insertCell(0).innerHTML = document.getElementById("add_date").value;
 		var req = new XMLHttpRequest();
 		 req.open("GET", "http://flip3.eng.oregonstate.edu:34692/insert?"+
 		 "name=" + document.getElementById(add_name).value +
