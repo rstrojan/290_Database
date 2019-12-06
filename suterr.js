@@ -60,6 +60,7 @@ app.get('/save',function(req,res,next){
       return;
     }
 	var curVals = result[0]
+	console.log(curVals);
 	  pool.query("UPDATE workouts SET name=?, reps=?, weight=?, lbs=?, date=? WHERE id=?", [req.query.name || curVals.name, req.query.reps || curVals.reps, req.query.weight || curVals.weight, req.query.lbs || curVals.lbs, req.query.date || curVals.date, req.query.id], function(err, result){
 		if(err){
 		  next(err);
