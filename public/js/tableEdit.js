@@ -75,7 +75,7 @@ function addRow(tableID) {
 		//new remBut = document.createElement("BUTTON");
 		//remCell.appendChild(remBut);
 		//type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})"
-		remBut.setAttribute("type","button");
+		//remBut.setAttribute("type","button");
 		
 		
 		console.log(response);
