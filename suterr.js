@@ -66,18 +66,8 @@ app.get('/save',function(req,res,next){
 		  next(err);
 		  return;
 		}
+		    res.redirect("http://flip3.engr.oregonstate.edu:34692");
 	  });
-   });
-   console.log("?");
-  pool.query('SELECT * FROM workouts', function(err, rows, fields){
-    if(err){
-      next(err);
-      return;
-    }
-	console.log("?");
-	context.dataList = rows;
-    context.results = JSON.stringify(rows);
-    res.render('tickets', context);
   });
 });
 
