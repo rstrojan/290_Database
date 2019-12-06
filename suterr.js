@@ -66,20 +66,19 @@ app.get('/save',function(req,res,next){
 		  next(err);
 		  return;
 		}
-		  pool.query('SELECT * FROM workouts', function(err, rows, fields){
-			if(err){
-			  next(err);
-			  return;
-			}
-			console.log("?");
-			context.dataList = rows;
-			context.results = JSON.stringify(rows);
-			res.render('home', context);
-		  });
 	  });
    });
    console.log("?");
-	window.location.href = "http://flip3.engr.oregonstate.edu:34692/"
+  pool.query('SELECT * FROM workouts', function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+	console.log("?");
+	context.dataList = rows;
+    context.results = JSON.stringify(rows);
+    res.render('home', context);
+  });
 });
 
 app.get('/insert',function(req,res,next){
