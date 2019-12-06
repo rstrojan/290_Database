@@ -78,7 +78,12 @@ function addRow(tableID) {
 		remBut.setAttribute("type","button");
 		remBut.setAttribute("value","Remove Entry");
 		remBut.setAttribute("onclick","deleteRow('tracker',this,"+response.id+")");
-		
+		var editBut = document.createElement("INPUT");
+		editCell.appendChild(editBut);
+		//type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})"
+		editBut.setAttribute("type","button");
+		editBut.setAttribute("value","Edit Entry");
+		editBut.setAttribute("onclick","editRow('tracker',"+response.id+")");
 		
 		console.log(response);
     } catch (e) {
