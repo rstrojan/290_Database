@@ -42,7 +42,7 @@ function deleteRow(tableID,currentRow,rowId) {
 function addRow(tableID) {
     try {
         var table = document.getElementById(tableID);
-		var row = table.insertRow(0);
+		var row = table.insertRow(2);
 		row.insertCell(0).innerHTML = document.getElementById(add_name);
 		row.insertCell(0).innerHTML = document.getElementById(add_reps);
 		row.insertCell(0).innerHTML = document.getElementById(add_weight);
