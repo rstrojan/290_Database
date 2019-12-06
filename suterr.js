@@ -83,7 +83,9 @@ app.get('/save',function(req,res,next){
 				res.render('home', context);
 			  });
 	  });
+	  res.end();
   });
+  res.end();
 });
 
 app.get('/insert',function(req,res,next){
