@@ -65,7 +65,7 @@ function addRow(tableID) {
 
 function editRow(tableID,rowId) {
 	try{
-	window.location.href("http://flip3.engr.oregonstate.edu:34692/update?"+rowId);
+	window.location.href = "http://flip3.engr.oregonstate.edu:34692/update?id="+rowId;
     } catch (e) {
         alert(e);
     }//getValues();
