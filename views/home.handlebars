@@ -11,7 +11,7 @@
 	<th></th>
   </tr>
   <form action="javascript:addRow('tracker')">
-  
+  <
   <tr>
 	<td><input type="text" name="name" id="add_name" value="New Entry" size="30" maxlength="30">
 	<td><input type="number" name="reps" id="add_reps" value="1" min="1">
@@ -35,6 +35,7 @@
 	<td>{{this.date}}
 	<td><input type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})" />
 	<td><input type="button" value="Edit Entry" onclick="editRow('tracker',{{this.id}})" />
+	<input type="hidden" value="this.id}">
 	<td>
   </tr>
   {{/each}}

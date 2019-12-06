@@ -80,8 +80,9 @@ app.get('/insert',function(req,res,next){
     }
 	console.log("5");
 	
-	console.log(JSON.stringify(result.insertId));
-	res.send('what');
+	context.results = JSON.stringify(result);
+	res.send(context.results);
+	//res.send('what');
 	//res.send(result.insertId);
   });
   
