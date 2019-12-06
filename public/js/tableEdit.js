@@ -60,6 +60,13 @@ function addRow(tableID) {
 		nameCell.appendChild(document.createTextNode(response.name));
 		var repsCell = document.createElement("TD");
 		newRow.appendChild(repsCell);
+		repsCell.appendChild(document.createTextNode(response.reps));
+		var weightCell = document.createElement("TD");
+		newRow.appendChild(weightCell);
+		weightCell.appendChild(document.createTextNode(response.weight));
+		var lbsCell = document.createElement("TD");
+		newRow.appendChild(lbsCell);
+		lbsCell.appendChild(document.createTextNode(response.lbs));
 		
 		
 		
