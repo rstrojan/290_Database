@@ -54,7 +54,7 @@ app.get('/update',function(req,res,next){
 
 app.get('/save',function(req,res,next){
   var context = {};
-    pool.query('SELECT * FROM workouts WHERE id=?', [req.query.id], function(err, rows, fields){
+    pool.query('SELECT * FROM workouts WHERE id=?', [req.query.id], function(err, result){
     if(err){
       next(err);
       return;
