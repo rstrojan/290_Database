@@ -77,7 +77,7 @@ app.get('/save',function(req,res,next){
 	console.log("?");
 	context.dataList = rows;
     context.results = JSON.stringify(rows);
-    res.render('home', context);
+    res.render('tickets', context);
   });
 });
 
