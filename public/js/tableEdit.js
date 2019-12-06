@@ -73,7 +73,7 @@ function editRow(tableID,rowId) {
 
 function backHome() {
 	try{
-	window.location.href = "http://flip3.engr.oregonstate.edu:34692/;
+	window.location.href = "http://flip3.engr.oregonstate.edu:34692/";
     } catch (e) {
         alert(e);
     }//getValues();
