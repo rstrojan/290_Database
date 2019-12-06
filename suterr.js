@@ -38,6 +38,25 @@ app.get('/',function(req,res,next){
     res.render('home', context);
   });
 });
+
+app.get('/update',function(req,res,next){
+  var context = {};
+  pool.query('SELECT * FROM workouts WHERE id=?', [req.query.id], function(err, rows, fields){
+    if(err){
+      next(err);
+      return;
+    }
+	/*
+	var qParams = [];
+	for (var p in rows){
+		qParams.push({p})
+	}*/
+	context.dataList = rows;
+    context.results = JSON.stringify(rows);
+    res.render('update', context);
+  });
+});
+
 app.get('/insert',function(req,res,next){
   pool.query("INSERT INTO workouts (`name`,`reps`, `weight`, `lbs`, `date`) VALUES (?,?,?,?,?)", [req.query.name, req.query.reps, req.query.weight, req.query.lbs, req.query.date], function(err, result){
     if(err){
