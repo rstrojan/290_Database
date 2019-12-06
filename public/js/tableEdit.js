@@ -72,7 +72,7 @@ function addRow(tableID) {
 		dateCell.appendChild(document.createTextNode(response.date));
 		var remCell = document.createElement("TD");
 		newRow.appendChild(remCell);
-		new remBut = document.createElement("INPUT");
+		new remBut = document.createElement("BUTTON");
 		remCell.appendChild(remBut);
 		//type="button" value="Remove Entry" onclick="deleteRow('tracker',this, {{this.id}})"
 		remBut.setAttribute("type","button");
